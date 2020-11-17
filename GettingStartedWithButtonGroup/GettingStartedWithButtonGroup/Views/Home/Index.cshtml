@@ -1,0 +1,34 @@
+@using GettingStartedWithButtonGroup.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home</h2>
+
+@(Html.DevExtreme().ButtonGroup()
+    .KeyExpr("style")
+    .SelectionMode(ButtonGroupSelectionMode.Multiple)
+    .Items(items =>
+    {
+        items.Add().Icon("bold").Option("style", "bold");
+        items.Add().Icon("italic").Option("style", "italic");
+        items.Add().Icon("underline").Option("style", "underline");
+        items.Add().Icon("strike").Option("style", "strike");
+    })
+    .SelectedItemKeys(new string[] { "italic" })
+    .OnSelectionChanged("logSelectionChanged")
+)
+
+<script type="text/javascript">
+    function logSelectionChanged (e) {
+        const selectedItemKeys = e.component.option("selectedItemKeys");
+        let message;
+        if(selectedItemKeys.length > 0) {
+            message = "The following styles are selected: " + selectedItemKeys.join(", ");
+        } else {
+            message = "There are no selected styles"
+        }
+        console.log(message);
+    }
+</script>

@@ -10,8 +10,8 @@
     "react-dom": "^16.5.2",
     "react-scripts": "4.0.2",
     "web-vitals": "^0.2.4",
-    "devextreme": "20.1.7",
-    "devextreme-react": "20.1.7"
+    "devextreme": "20.2.3",
+    "devextreme-react": "20.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

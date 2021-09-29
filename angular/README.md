@@ -1,4 +1,6 @@
-# GettingStartedWithButtongroup
+# Getting Started with DevExtreme Angular ButtonGroup
+
+This repository stores Angular source code for the [Getting Started with ButtonGroup](https://js.devexpress.com/Documentation/Guide/UI_Components/ButtonGroup/Getting_Started_with_ButtonGroup/) tutorial.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 

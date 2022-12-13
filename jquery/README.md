@@ -1,6 +1,6 @@
-# Getting Started with DevExtreme jQuery ButtonGroup
+# DevExtreme jQuery ButtonGroup - Getting Started 
 
-This repository stores jQuery source code for the [Getting Started with ButtonGroup](https://js.devexpress.com/Documentation/Guide/UI_Components/ButtonGroup/Getting_Started_with_ButtonGroup/) tutorial.
+This repository stores the code examples of the jQuery ButtonGroup component for the [Getting Started with ButtonGroup](https://js.devexpress.com/Documentation/Guide/UI_Components/ButtonGroup/Getting_Started_with_ButtonGroup/) tutorial. The ButtonGroup is a set of toggle buttons that can be used as a mode switcher. This tutorial describes how to configure basic ButtonGroup features. 
 
 ## Installation
 
@@ -21,6 +21,6 @@ http://localhost:3000/src/index.html
 
 You can learn more about jQuery API in the [jQuery documentation](https://api.jquery.com/).
 
-To get more help on DevExtreme submit an issue on [GitHub](https://github.com/DevExpress/devextreme/issues) or [Support Center](https://www.devexpress.com/Support/Center/Question/Create)
+To get more help on DevExtreme, submit an issue on [GitHub](https://github.com/DevExpress/devextreme/issues) or [Support Center](https://www.devexpress.com/Support/Center/Question/Create)
 
 

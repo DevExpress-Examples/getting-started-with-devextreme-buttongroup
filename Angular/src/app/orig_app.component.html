@@ -1,0 +1,7 @@
+<dx-button-group
+    [items]="fontStyles"
+    keyExpr="style"
+    selectionMode="multiple"
+    [(selectedItemKeys)]="selectedFontStyleNames"
+    (onSelectionChanged)="logSelectionChanged()">
+</dx-button-group>

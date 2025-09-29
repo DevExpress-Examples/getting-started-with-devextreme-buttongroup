@@ -22,8 +22,8 @@ This repository stores the code examples of the ButtonGroup component for the [G
 - **Vue**
     - [App.vue](Vue/src/App.vue)
     - [ButtonContent.vue](Vue/src/components/ButtonContent.vue)
-- **NetCore**    
-    - [Index.cshtml](aspnetmvc/GettingStartedWithButtonGroup/Views/Home/Index.cshtml)
+- **ASP.NET Core**    
+    - [Index.cshtml](ASP.NET%20Core/Views/Home/Index.cshtml)
                     
 ## Documentation
 

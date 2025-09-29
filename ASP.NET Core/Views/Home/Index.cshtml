@@ -1,29 +1,25 @@
-@using ASP_NET_Core.Models
+<h2>Getting Started with ButtonGroup</h2>
 
-<h2>Home</h2>
-
-@(Html.DevExtreme().DataGrid<SampleOrder>()
-    .ShowBorders(true)
-    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
-    .Columns(columns => {
-        columns.AddFor(m => m.OrderID);
-        columns.AddFor(m => m.OrderDate);
-        columns.AddFor(m => m.CustomerName);
-        columns.AddFor(m => m.ShipCountry);
-        columns.AddFor(m => m.ShipCity);
+@(Html.DevExtreme().ButtonGroup()
+    .Items(items => {
+        items.Add().Icon("bold").Text("Bold");
+        items.Add().Icon("italic").Text("Italic");
+        items.Add().Icon("underline").Text("Underline");
+        items.Add().Icon("strike").Text("Strike");
     })
-    .Paging(p => p.PageSize(10))
-    .FilterRow(f => f.Visible(true))
-    .HeaderFilter(f => f.Visible(true))
-    .GroupPanel(p => p.Visible(true))
-    .Grouping(g => g.AutoExpandAll(false))
-    .RemoteOperations(true)
-    .Summary(s => s
-        .TotalItems(totalItems => {
-            totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
-        })
-        .GroupItems(groupItems => {
-            groupItems.Add().SummaryType(SummaryType.Count);
-        })
-    )
+    .KeyExpr("text")
+    .SelectionMode(ButtonGroupSelectionMode.Multiple)
+    .SelectedItemKeys(new[] { "Italic" })
+    .OnSelectionChanged(@<text>
+        function(e) {
+            var selectedItemKeys = e.component.option('selectedItemKeys');
+            var message;
+            if (selectedItemKeys.length > 0) {
+                message = 'The following styles are selected: ' + selectedItemKeys.join(', ');
+            } else {
+                message = 'There are no selected styles';
+            }
+            console.log(message);
+        }
+    </text>)
 )

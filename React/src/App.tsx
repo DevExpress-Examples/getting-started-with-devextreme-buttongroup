@@ -1,17 +1,48 @@
 import { useCallback, useState } from 'react';
-import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import './App.css';
+import { ButtonGroup } from 'devextreme-react/button-group';
+import type { ButtonGroupTypes } from 'devextreme-react/button-group';
+
+// Define the font style interface
+interface FontStyle {
+  icon: string;
+  style: string;
+}
+
+const fontStyles: FontStyle[] = [{
+  icon: 'bold',
+  style: 'bold',
+}, {
+  icon: 'italic',
+  style: 'italic',
+}, {
+  icon: 'underline',
+  style: 'underline',
+}, {
+  icon: 'strike',
+  style: 'strike',
+}];
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
+  const [selectedFontStyleNames] = useState<string[]>(['italic']);
+
+  const logSelectionChanged = useCallback((e: ButtonGroupTypes.SelectionChangedEvent) => {
+    const selectedItemKeys = e.component.option('selectedItemKeys') ?? [];
+    const message = selectedItemKeys.length > 0
+      ? `The following styles are selected: ${selectedItemKeys.join(', ')}`
+      : 'There are no selected styles';
+    console.log(message); // eslint-disable-line no-console
+  }, []);
+
   return (
-    <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
-    </div>
+    <ButtonGroup
+      items={fontStyles}
+      keyExpr="style"
+      selectionMode="multiple"
+      defaultSelectedItemKeys={selectedFontStyleNames}
+      onSelectionChanged={logSelectionChanged}
+    />
   );
 }
 

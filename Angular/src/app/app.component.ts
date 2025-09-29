@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +6,30 @@ import { ClickEvent } from 'devextreme/ui/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  fontStyles: { icon: string; style: string }[] = [{
+    icon: 'bold',
+    style: 'bold',
+  }, {
+    icon: 'italic',
+    style: 'italic',
+  }, {
+    icon: 'underline',
+    style: 'underline',
+  }, {
+    icon: 'strike',
+    style: 'strike',
+  }];
 
-  counter = 0;
+  selectedFontStyleNames: string[] = ['italic'];
 
-  buttonText = 'Click count: 0';
+  constructor() {
+    this.logSelectionChanged = this.logSelectionChanged.bind(this);
+  }
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  logSelectionChanged(): void {
+    const message = this.selectedFontStyleNames.length > 0
+      ? `The following styles are selected: ${this.selectedFontStyleNames.join(', ')}`
+      : 'There are no selected styles';
+    console.log(message); // eslint-disable-line no-console
   }
 }

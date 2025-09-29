@@ -18,9 +18,10 @@ This repository stores the code examples of the ButtonGroup component for the [G
 - **jQuery**
     - [index.js](jQuery/src/index.js)
 - **React**
-    - [App.js](React/src/App.js)
+    - [App.tsx](React/src/App.tsx)
 - **Vue**
     - [App.vue](Vue/src/App.vue)
+    - [ButtonContent.vue](Vue/src/components/ButtonContent.vue)
 - **NetCore**    
     - [Index.cshtml](aspnetmvc/GettingStartedWithButtonGroup/Views/Home/Index.cshtml)
                     

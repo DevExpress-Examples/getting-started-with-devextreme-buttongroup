@@ -1,10 +1,32 @@
+const fontStyles = [{
+  icon: 'bold',
+  style: 'bold',
+}, {
+  icon: 'italic',
+  style: 'italic',
+}, {
+  icon: 'underline',
+  style: 'underline',
+}, {
+  icon: 'strike',
+  style: 'strike',
+}];
+
 $(() => {
-  let count = 0;
-  $('#btn').dxButton({
-    text: `Click count: ${count}`,
-    onClick(e) {
-      count += 1;
-      e.component.option('text', `Click count: ${count}`);
+  $('#myButtonGroup').dxButtonGroup({
+    items: fontStyles,
+    keyExpr: 'style',
+    selectionMode: 'multiple',
+    selectedItemKeys: ['italic'],
+    onSelectionChanged(e) {
+      const selectedItemKeys = e.component.option('selectedItemKeys');
+      let message;
+      if (selectedItemKeys.length > 0) {
+        message = `The following styles are selected: ${selectedItemKeys.join(', ')}`;
+      } else {
+        message = 'There are no selected styles';
+      }
+      console.log(message); // eslint-disable-line no-console
     },
   });
 });

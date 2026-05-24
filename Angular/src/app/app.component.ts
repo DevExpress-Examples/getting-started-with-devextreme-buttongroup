@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+import { DxButtonGroupModule } from 'devextreme-angular/ui/button-group';
+
 @Component({
     selector: 'app-root',
+    imports: [DxButtonGroupModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
 })
 export class AppComponent {
   fontStyles: { icon: string; style: string }[] = [{

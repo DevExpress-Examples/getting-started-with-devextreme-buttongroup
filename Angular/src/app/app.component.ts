@@ -33,6 +33,6 @@ export class AppComponent {
     const message = this.selectedFontStyleNames.length > 0
       ? `The following styles are selected: ${this.selectedFontStyleNames.join(', ')}`
       : 'There are no selected styles';
-    console.log(message); // eslint-disable-line no-console
+    console.log(message);
   }
 }

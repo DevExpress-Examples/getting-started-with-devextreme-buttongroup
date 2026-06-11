@@ -26,7 +26,7 @@ $(() => {
       } else {
         message = 'There are no selected styles';
       }
-      console.log(message); // eslint-disable-line no-console
+      console.log(message);
     },
   });
 });

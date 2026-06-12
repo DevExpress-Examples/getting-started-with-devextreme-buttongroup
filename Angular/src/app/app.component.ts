@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { DxButtonGroupModule } from 'devextreme-angular/ui/button-group';
 
@@ -6,6 +6,7 @@ import { DxButtonGroupModule } from 'devextreme-angular/ui/button-group';
     selector: 'app-root',
     imports: [DxButtonGroupModule],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
